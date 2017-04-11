@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>map-test</title>
+    <style>
+      #map {
+      height: 500px;
+      width: 100%;
+      }
+
+      h1 {
+      font-family: 'Open Sans', sans-serif;
+      color: #555;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 60px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 1;
+      text-shadow: #EDEDED 3px 2px 0;
+      position: relative;
+    }
+    h1:after {
+      content:"My Google Maps Demo";
+      position: absolute;
+      left: 8px;
+      top: 32px;
+    }
+    h1:after {
+      /*background: url(http://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+      background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+      background-size: 4px 4px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: -5;
+      display: block;
+      text-shadow: none;
+    }
+    </style>
+
+        <!--
+            You need to include this script tag on any page that has a Google Map.
+
+            The following script tag will work when opening this example locally on your computer.
+            But if you use this on a localhost server or a live website you will need to include an API key.
+            Sign up for one here (it's free for small usage):
+                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+            After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+        -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1LPoTbrDP3isk51m-GyhOTYb1u_-JreU"></script>
+
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 2,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(0, 0), // mapCentre
+
+                    // How you would like to style the map.
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e0efef"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "hue": "#1900ff"
+            },
+            {
+                "color": "#c0e8e8"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 700
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#7dcdcd"
+            }
+        ]
+    }
+]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.6700, -73.9400),
+                map: map,
+                title: 'Snazzy!'
+            });
+
+            var markerTwo = new google.maps.Marker({
+                position: new google.maps.LatLng(6, 0),
+                map: map,
+                title: 'Snazzy!'
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <h1>My Google Maps Demo</h1>
+
+    <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
+    <div id="map"></div>
+  </body>
+</html>
