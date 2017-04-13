@@ -1,5 +1,6 @@
 const express = require('express');
 const data = require('./app.js')
+const port = process.env.PORT || 4000;
 
 var app = express();
 
@@ -24,4 +25,4 @@ app.get('/bad', (req, res) => {
 });
 
 
-app.listen(4000);
+app.listen(port);
