@@ -7,6 +7,10 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
+  res.redirect('/map.html');
+});
+
+app.get('/data', (req, res) => {
   // res.send('Hello world!')
   res.send({
     name: `${JSON.stringify(data.ports)}`,
