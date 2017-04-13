@@ -71,29 +71,20 @@
                     // This is where you would paste any style found on Snazzy Maps.
                     styles: [
     {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
+        "featureType": "water",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
-            },
-            {
-                "color": "#e0efef"
+                "color": "#193341"
             }
         ]
     },
     {
-        "featureType": "poi",
-        "elementType": "geometry.fill",
+        "featureType": "landscape",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
-            },
-            {
-                "hue": "#1900ff"
-            },
-            {
-                "color": "#c0e8e8"
+                "color": "#2c5a71"
             }
         ]
     },
@@ -102,16 +93,70 @@
         "elementType": "geometry",
         "stylers": [
             {
-                "lightness": 100
+                "color": "#29768a"
             },
             {
-                "visibility": "simplified"
+                "lightness": -37
             }
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "labels",
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#3e606f"
+            },
+            {
+                "weight": 2
+            },
+            {
+                "gamma": 0.84
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "weight": 0.6
+            },
+            {
+                "color": "#1a3541"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.icon",
         "stylers": [
             {
                 "visibility": "off"
@@ -119,23 +164,11 @@
         ]
     },
     {
-        "featureType": "transit.line",
+        "featureType": "poi.park",
         "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
-            },
-            {
-                "lightness": 700
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#7dcdcd"
+                "color": "#2c5a71"
             }
         ]
     }

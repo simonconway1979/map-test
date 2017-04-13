@@ -1,4 +1,5 @@
 const express = require('express');
+const data = require('./app.js')
 
 var app = express();
 
@@ -7,13 +8,15 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
   // res.send('Hello world!')
   res.send({
-    name: 'Simon',
+    name: `${JSON.stringify(data.ports)}`,
     likes: 'Cycling'
   });
 });
 
 app.get('/map', (req, res) => {
-  res.send('Map')
+
+  console.log(ports)
+  res.send('Map');
 });
 
 app.get('/bad', (req, res) => {
