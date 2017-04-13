@@ -205,5 +205,20 @@
 
     <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
     <div id="map"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      socket.on('connect', () => {
+        console.log('Connected to server');
+      });
+
+      socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+      });
+
+    </script>
+
   </body>
 </html>

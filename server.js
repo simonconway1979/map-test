@@ -1,10 +1,24 @@
+const path = require('path');
+const http = require('http');
 const express = require('express');
-const data = require('./app.js')
+const socketIO = require('socket.io');
+const data = require('./app.js');
+const publicPath = path.join(__dirname, '/public');
 const port = process.env.PORT || 4000;
 
 var app = express();
+var server = http.createServer(app);
+var io = socketIO(server);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(publicPath));
+
+io.on('connection', (socket) => {
+  console.log('New user connected');
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
 
 app.get('/', (req, res) => {
   res.redirect('/map.html');
@@ -18,10 +32,6 @@ app.get('/data', (req, res) => {
   });
 });
 
-app.get('/map', (req, res) => {
-  res.send('Map');
-});
-
 app.get('/bad', (req, res) => {
   res.send({
     error: 'There was an error with this request'
@@ -29,4 +39,6 @@ app.get('/bad', (req, res) => {
 });
 
 
-app.listen(port);
+server.listen(port, () => {
+  console.log(`Server is up on ${port}`);
+});
