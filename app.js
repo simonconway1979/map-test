@@ -10,6 +10,7 @@ console.log(`var ${data.ports[0].name} = new google.maps.Marker ({
   title: '${data.ports[0].name}'
 });`)
 
+
 // console.log(`var ${data.ports[0].name} = new google.maps.Marker({
 //      position: new google.maps.LatLng(${data.ports[0].lat}, ${data.ports[0].lng}),
 //      map: map,

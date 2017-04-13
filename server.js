@@ -14,8 +14,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/map', (req, res) => {
-
-  console.log(ports)
   res.send('Map');
 });
 
@@ -26,4 +24,4 @@ app.get('/bad', (req, res) => {
 });
 
 
-app.listen(3000);
+app.listen(4000);
